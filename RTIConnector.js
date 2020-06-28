@@ -50,7 +50,7 @@ class RTIConnector
           connector.output.instance.setString('color', data.color)
           connector.output.write()
           
-          //console.log(connector.output.instance.getJson())
+        ///console.log(connector.output.instance.getJson())
         
           // Wait for all subscriptions to receive the data before exiting
           await connector.output.wait()

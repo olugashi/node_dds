@@ -20,7 +20,9 @@ router.get('/about', function (req, res) {
 
 router.post('/setPoint', function (req, res) {
     console.log(req.body)
-    //connector.writeData({x:100 , y: 100 ,shapesize: 30 ,color :'RED' },'circle');
+    const container = req.app.get('context')
+    const rti_connector = container.get("rti_connector")
+    rti_connector.writeData( req.body,'circle');
     res.json(req.body)
   })
 export default router

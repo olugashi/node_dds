@@ -17,7 +17,7 @@ import { readFile } from 'fs';
 import { listen } from 'socket.io';
 import connector from './RTIConnector';
 import gpp from './gpp'
-
+import Container from './container'
 
 var server = app.listen(7400, "127.0.0.1", function () {
   var host = server.address().address
@@ -47,6 +47,16 @@ app.get('/simple',function (req, res)
     })
 })
 
+
+
+const container = new Container()
+const io = listen(server)
+var rti =  new connector(io);
+
+container.singleton('rti_connector', rti)
+//container.get("rti_connector").writeData({x:100 , y: 100 ,shapesize: 30 ,color :'RED' },'circle');
+
+app.set('context', container)
 app.use("/gpp", gpp)
 
 // Create the HTTP server (and configure it to serve the requested visualisation)
@@ -82,8 +92,8 @@ console.log('Server running at http://127.0.0.1:7400/')*/
 // Create the DDS entities required for this example - a reader of Triangle, Circle
 // and Square (all under the same participant).
 
-const io = listen(server)
-var rti1 =  new connector(io);
+//const io = listen(server)
+//var rti1 =  new connector(io);
 
 /*var myVar = setInterval(()=>{
   rti1.writeData({x:100 , y: 100 ,shapesize: 30 ,color :'RED' },'circle');
