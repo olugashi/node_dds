@@ -1,4 +1,3 @@
-import sleep from "sleep";
 import { Connector } from "rticonnextdds-connector";
 
 class RTIConnector {
@@ -9,7 +8,7 @@ class RTIConnector {
     this.connector = new Connector(participant, fullpath);
 
     this.connector.on("on_data_available", () => {
-      // We have received data on one of the inputs within this connector
+      // We have received data on one of the inputs withinnode this connector
       // Iterate through each one, checking if it has any valid data
       this.inputs.forEach((element) => {
         element.input.take();

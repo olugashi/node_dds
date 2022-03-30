@@ -6,4 +6,4 @@ function squareConverter(connector, data) {
   connector.output.write();
 }
 
-export default { squareConverter };
+module.exports = { squareConverter };

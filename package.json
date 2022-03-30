@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "node-gyp": "^7.0.0",
@@ -21,7 +22,7 @@
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
     "postgresql": "0.0.1",
-    "rticonnextdds-connector": "^1.0.0",
+    "rticonnextdds-connector": "^1.1.1",
     "sequelize": "^6.2.3",
     "sleep": "^6.2.0",
     "socket.io": "^2.3.0"
@@ -30,6 +31,8 @@
     "@babel/cli": "^7.10.3",
     "@babel/core": "^7.10.3",
     "@babel/node": "^7.10.3",
-    "@babel/preset-env": "^7.10.3"
+    "@babel/preset-env": "^7.10.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
   }
 }
